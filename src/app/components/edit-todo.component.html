@@ -1,0 +1,23 @@
+<div class="edit-todo-container">
+    <h2>📝 Teendő szerkesztése</h2>
+    <form [formGroup]="todoForm" (ngSubmit)="saveTodo()">
+      <label>
+        <strong>Cím:</strong>
+        <input type="text" formControlName="cim" />
+      </label>
+      <div class="form-group">
+        <label for="datum">📅 Dátum:</label>
+        <input id="datum" type="date" formControlName="datum" class="form-control" />
+      </div>
+      <label>
+        <strong>Leírás:</strong>
+        <textarea rows="4" formControlName="leiras"></textarea>
+      </label>
+      <label>
+        <input type="checkbox" formControlName="completed" />
+        <strong>Kész van</strong>
+      </label>
+      <button type="submit">Mentés</button>
+    </form>
+  </div>
+  

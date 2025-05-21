@@ -1,1 +1,22 @@
-<p>todo-list oldal működik!</p>
+<div class="todo-header">
+    <h2>📝 Teendőim</h2>
+    <button class="add-todo-button" (click)="goToAdd()">➕ Új teendő</button>
+  </div>
+  
+  <div class="todo-container">
+    <div *ngFor="let todo of todos$ | async" class="todo-card">
+      <div class="todo-left">
+        <input type="checkbox" [checked]="todo.completed" (change)="toggleComplete(todo)" />
+        <div class="todo-text">
+          <h3 [class.completed]="todo.completed">{{ todo.cim }}</h3>
+          <p><strong>Dátum:</strong> {{ todo.datum }}</p>
+          <p>{{ todo.leiras }}</p>
+        </div>
+      </div>
+      <div class="todo-actions">
+        <button class="edit-btn" (click)="editTodo(todo.id)">Szerkesztés</button>
+        <button class="delete-btn" (click)="confirmDelete(todo.id)">🗑</button>
+      </div>
+    </div>
+  </div>
+  

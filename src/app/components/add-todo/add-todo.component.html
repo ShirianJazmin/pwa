@@ -1,1 +1,18 @@
-<p>add-todo oldal működik!</p>
+<h2>➕ Új teendő</h2>
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <label for="cim">Cím:</label>
+  <input id="cim" formControlName="cim" placeholder="Pl. Bevásárlás" />
+
+  <label for="datum">Dátum:</label>
+  <input id="datum" type="date" formControlName="datum" />
+
+  <label for="leiras">Leírás:</label>
+  <textarea id="leiras" formControlName="leiras" placeholder="Részletek..."></textarea>
+
+  <label>
+    <input type="checkbox" formControlName="completed" />
+    Kész van
+  </label>
+
+  <button type="submit" [disabled]="!todoForm.valid">Hozzáadás</button>
+</form>

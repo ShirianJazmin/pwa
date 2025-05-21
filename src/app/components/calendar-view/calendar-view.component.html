@@ -1,0 +1,16 @@
+<h2>📅 Naptár nézet</h2>
+
+<div class="calendar-section">
+  <p *ngIf="objectKeys(todosByDate).length === 0">Nincs teendő a naptárban.</p>
+
+  <div *ngFor="let date of objectKeys(todosByDate)">
+    <div class="date-title">
+      {{ date !== 'none' ? (date | magyarDatum) : 'Nincs dátum' }}
+    </div>
+    <ul>
+      <li *ngFor="let todo of todosByDate[date]">
+        <strong>{{ todo.cim }}</strong> – {{ todo.leiras }}
+      </li>
+    </ul>
+  </div>
+</div>

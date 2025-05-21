@@ -1,0 +1,11 @@
+<div class="auth-container">
+    <h2>Bejelentkezés</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input formControlName="email" type="email" placeholder="Email" />
+      <input formControlName="password" type="password" placeholder="Jelszó" />
+      <button type="submit">Bejelentkezés</button>
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </form>
+    <p>Még nincs fiókod? <a routerLink="/register">Regisztrálj itt</a></p>
+  </div>
+  
